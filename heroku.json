@@ -1,0 +1,46 @@
+{
+  "name": "crm-bhconnect",
+  "description": "CRM BhConnect - Système de gestion client",
+  "keywords": ["php", "laravel", "crm", "bhconnect"],
+  "website": "https://crm-bhconnect.herokuapp.com",
+  "repository": "https://github.com/CodeurFMJ/crm-bhconnect",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "php artisan migrate --force && php artisan db:seed --force"
+  },
+  "env": {
+    "APP_NAME": {
+      "description": "Nom de l'application",
+      "value": "CRM BhConnect"
+    },
+    "APP_ENV": {
+      "description": "Environnement de l'application",
+      "value": "production"
+    },
+    "APP_DEBUG": {
+      "description": "Mode debug",
+      "value": "false"
+    },
+    "APP_KEY": {
+      "description": "Clé d'application Laravel",
+      "generator": "secret"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:mini",
+      "as": "DATABASE"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
+}

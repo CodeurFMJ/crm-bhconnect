@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "crm-bhconnect",
+  "builds": [
+    {
+      "src": "public/index.php",
+      "use": "@vercel/php"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "public/index.php"
+    }
+  ],
+  "env": {
+    "APP_NAME": "CRM BhConnect",
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_URL": "https://crm-bhconnect.vercel.app"
+  }
+}
