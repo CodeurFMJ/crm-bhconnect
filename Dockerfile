@@ -1,5 +1,5 @@
-# Utiliser l'image PHP officielle avec Apache
-FROM php:8.1-apache
+# Utiliser l'image PHP officielle
+FROM php:8.1-cli
 
 # Installer les dépendances système
 RUN apt-get update && apt-get install -y \
@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
+    libpq-dev \
     zip \
     unzip \
     nodejs \
@@ -17,13 +18,13 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Installer les extensions PHP
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+RUN docker-php-ext-install pdo pdo_pgsql mbstring exif pcntl bcmath gd
 
 # Installer Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Définir le répertoire de travail
-WORKDIR /var/www/html
+WORKDIR /app
 
 # Copier les fichiers de l'application
 COPY . .
@@ -34,16 +35,11 @@ RUN composer install --optimize-autoloader --no-dev
 # Installer les dépendances Node.js et compiler les assets
 RUN npm install && npm run build
 
-# Configurer les permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html
-
-# Configurer Apache
-RUN a2enmod rewrite
-COPY .htaccess /var/www/html/.htaccess
+# Rendre le script de démarrage exécutable
+RUN chmod +x start.sh
 
 # Exposer le port
-EXPOSE 80
+EXPOSE 8080
 
 # Commande de démarrage
-CMD ["apache2-foreground"]
+CMD ["./start.sh"]
