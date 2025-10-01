@@ -1,0 +1,387 @@
+/* BhConnect CRM Theme - Palette de couleurs de l'entreprise */
+
+:root {
+  /* Couleurs principales BhConnect */
+  --bh-orange: #FF6B35;
+  --bh-orange-light: #FF8A5B;
+  --bh-orange-dark: #E55A2B;
+  --bh-blue: #1B365D;
+  --bh-blue-light: #2A4A6B;
+  --bh-blue-dark: #0F2438;
+  
+  /* Couleurs secondaires */
+  --bh-gray: #6C757D;
+  --bh-gray-light: #F8F9FA;
+  --bh-gray-dark: #495057;
+  --bh-success: #28A745;
+  --bh-warning: #FFC107;
+  --bh-danger: #DC3545;
+  --bh-info: #17A2B8;
+  
+  /* Couleurs de fond */
+  --bh-bg-primary: #FFFFFF;
+  --bh-bg-secondary: #F8F9FA;
+  --bh-bg-dark: #1B365D;
+  
+  /* Ombres et bordures */
+  --bh-shadow: 0 0.125rem 0.25rem rgba(27, 54, 93, 0.075);
+  --bh-shadow-lg: 0 0.5rem 1rem rgba(27, 54, 93, 0.15);
+  --bh-border: #E9ECEF;
+  --bh-border-radius: 0.375rem;
+}
+
+/* Override Bootstrap colors */
+.btn-primary {
+  background-color: var(--bh-orange) !important;
+  border-color: var(--bh-orange) !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--bh-orange-dark) !important;
+  border-color: var(--bh-orange-dark) !important;
+}
+
+.btn-outline-primary {
+  color: var(--bh-orange) !important;
+  border-color: var(--bh-orange) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--bh-orange) !important;
+  border-color: var(--bh-orange) !important;
+  color: white !important;
+}
+
+.btn-secondary {
+  background-color: var(--bh-blue) !important;
+  border-color: var(--bh-blue) !important;
+  color: white !important;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bh-blue-dark) !important;
+  border-color: var(--bh-blue-dark) !important;
+}
+
+.btn-outline-secondary {
+  color: var(--bh-blue) !important;
+  border-color: var(--bh-blue) !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--bh-blue) !important;
+  border-color: var(--bh-blue) !important;
+  color: white !important;
+}
+
+/* Navbar styling */
+.navbar-brand {
+  color: var(--bh-orange) !important;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+}
+
+.navbar {
+  background-color: var(--bh-bg-primary) !important;
+  border-bottom: 2px solid var(--bh-orange) !important;
+  box-shadow: var(--bh-shadow) !important;
+}
+
+.nav-link {
+  color: var(--bh-blue) !important;
+  font-weight: 500 !important;
+}
+
+.nav-link:hover {
+  color: var(--bh-orange) !important;
+}
+
+/* Sidebar styling */
+.list-group-item-action {
+  color: var(--bh-blue) !important;
+  border-color: var(--bh-border) !important;
+}
+
+.list-group-item-action:hover {
+  background-color: var(--bh-orange) !important;
+  color: white !important;
+  border-color: var(--bh-orange) !important;
+}
+
+.list-group-item-action.active {
+  background-color: var(--bh-orange) !important;
+  border-color: var(--bh-orange) !important;
+  color: white !important;
+}
+
+/* Card styling */
+.card {
+  border: 1px solid var(--bh-border) !important;
+  box-shadow: var(--bh-shadow) !important;
+  border-radius: var(--bh-border-radius) !important;
+}
+
+.card-header {
+  background-color: var(--bh-bg-secondary) !important;
+  border-bottom: 1px solid var(--bh-border) !important;
+  color: var(--bh-blue) !important;
+  font-weight: 600 !important;
+}
+
+/* Form styling */
+.form-control:focus {
+  border-color: var(--bh-orange) !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25) !important;
+}
+
+.form-select:focus {
+  border-color: var(--bh-orange) !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25) !important;
+}
+
+/* Table styling */
+.table-light th {
+  background-color: var(--bh-blue) !important;
+  color: white !important;
+  border-color: var(--bh-blue) !important;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 107, 53, 0.1) !important;
+}
+
+/* Badge styling */
+.badge.bg-primary {
+  background-color: var(--bh-orange) !important;
+}
+
+.badge.bg-secondary {
+  background-color: var(--bh-blue) !important;
+}
+
+.badge.bg-success {
+  background-color: var(--bh-success) !important;
+}
+
+.badge.bg-danger {
+  background-color: var(--bh-danger) !important;
+}
+
+.badge.bg-warning {
+  background-color: var(--bh-warning) !important;
+  color: var(--bh-blue) !important;
+}
+
+.badge.bg-info {
+  background-color: var(--bh-info) !important;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  background-color: var(--bh-orange) !important;
+}
+
+.progress-bar.bg-primary {
+  background-color: var(--bh-orange) !important;
+}
+
+.progress-bar.bg-success {
+  background-color: var(--bh-success) !important;
+}
+
+.progress-bar.bg-danger {
+  background-color: var(--bh-danger) !important;
+}
+
+.progress-bar.bg-secondary {
+  background-color: var(--bh-blue) !important;
+}
+
+/* Alert styling */
+.alert-success {
+  background-color: rgba(40, 167, 69, 0.1) !important;
+  border-color: var(--bh-success) !important;
+  color: var(--bh-success) !important;
+}
+
+.alert-danger {
+  background-color: rgba(220, 53, 69, 0.1) !important;
+  border-color: var(--bh-danger) !important;
+  color: var(--bh-danger) !important;
+}
+
+.alert-warning {
+  background-color: rgba(255, 193, 7, 0.1) !important;
+  border-color: var(--bh-warning) !important;
+  color: var(--bh-warning) !important;
+}
+
+.alert-info {
+  background-color: rgba(23, 162, 184, 0.1) !important;
+  border-color: var(--bh-info) !important;
+  color: var(--bh-info) !important;
+}
+
+/* Logo styling */
+.bhconnect-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bhconnect-logo img {
+  height: 40px;
+  width: auto;
+  max-width: 200px;
+}
+
+.bhconnect-logo .logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.bhconnect-logo .logo-bh {
+  color: var(--bh-orange);
+}
+
+.bhconnect-logo .logo-connect {
+  color: var(--bh-blue);
+}
+
+.bhconnect-logo .logo-airplane {
+  color: var(--bh-orange);
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  transform: rotate(15deg);
+}
+
+.bhconnect-logo .logo-tagline {
+  font-size: 0.75rem;
+  color: var(--bh-blue);
+  font-weight: 400;
+  margin-top: -0.25rem;
+  display: block;
+}
+
+/* Login page logo */
+.login-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-logo img {
+  height: 80px;
+  width: auto;
+  max-width: 300px;
+}
+
+/* Page headers */
+.page-header h1 {
+  color: var(--bh-blue) !important;
+  font-weight: 600 !important;
+}
+
+.page-header .text-muted {
+  color: var(--bh-gray) !important;
+}
+
+/* Custom utility classes */
+.text-bh-orange {
+  color: var(--bh-orange) !important;
+}
+
+.text-bh-blue {
+  color: var(--bh-blue) !important;
+}
+
+.bg-bh-orange {
+  background-color: var(--bh-orange) !important;
+}
+
+.bg-bh-blue {
+  background-color: var(--bh-blue) !important;
+}
+
+.border-bh-orange {
+  border-color: var(--bh-orange) !important;
+}
+
+.border-bh-blue {
+  border-color: var(--bh-blue) !important;
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+  border: 1px solid var(--bh-border) !important;
+  box-shadow: var(--bh-shadow-lg) !important;
+}
+
+.dropdown-item:hover {
+  background-color: var(--bh-orange) !important;
+  color: white !important;
+}
+
+/* Pagination styling */
+.pagination .page-link {
+  color: var(--bh-blue) !important;
+  border-color: var(--bh-border) !important;
+}
+
+.pagination .page-link:hover {
+  background-color: var(--bh-orange) !important;
+  border-color: var(--bh-orange) !important;
+  color: white !important;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--bh-orange) !important;
+  border-color: var(--bh-orange) !important;
+}
+
+/* Login page specific styling */
+.login-container {
+  background: linear-gradient(135deg, var(--bh-blue) 0%, var(--bh-blue-light) 100%);
+  min-height: 100vh;
+}
+
+.login-card {
+  border: none !important;
+  box-shadow: var(--bh-shadow-lg) !important;
+  border-radius: 1rem !important;
+}
+
+.login-header {
+  background: linear-gradient(135deg, var(--bh-orange) 0%, var(--bh-orange-light) 100%);
+  color: white !important;
+  border-radius: 1rem 1rem 0 0 !important;
+  padding: 2rem !important;
+  text-align: center;
+}
+
+/* Dashboard specific styling */
+.dashboard-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--bh-shadow-lg) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.25rem !important;
+  }
+  
+  .bhconnect-logo .logo-text {
+    font-size: 1.25rem;
+  }
+  
+  .bhconnect-logo .logo-tagline {
+    font-size: 0.7rem;
+  }
+}

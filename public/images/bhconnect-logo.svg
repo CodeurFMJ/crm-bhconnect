@@ -1,0 +1,8 @@
+<svg width="180" height="50" viewBox="0 0 180 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="180" height="50" fill="#000000"/>
+  
+  <!-- Bh Connect Text -->
+  <text x="20" y="32" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FF6B35">Bh</text>
+  <text x="70" y="32" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1B365D">Connect</text>
+</svg>
