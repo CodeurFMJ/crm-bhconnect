@@ -1,0 +1,25 @@
+FROM php:8.1-cli
+
+# Installer les dépendances
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    libpq-dev \
+    zip \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Installer les extensions PHP
+RUN docker-php-ext-install pdo pdo_pgsql mbstring exif pcntl bcmath gd
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier les fichiers
+COPY . .
+
+# Commande de démarrage
+CMD ["sh", "-c", "php -S 0.0.0.0:$PORT -t public"]
