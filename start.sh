@@ -1,27 +1,18 @@
 #!/bin/bash
 
-echo "🐳 Démarrage de l'application CRM BhConnect avec Docker..."
+echo "🚀 Démarrage de l'application CRM BhConnect..."
 
-# Vérifier les variables d'environnement
-echo "📋 Variables d'environnement:"
-echo "PORT: $PORT"
-echo "APP_ENV: $APP_ENV"
-echo "DATABASE_URL: ${DATABASE_URL:0:20}..."
+# Attendre que la base de données soit prête
+echo "⏳ Attente de la base de données Supabase..."
+sleep 10
 
-# Attendre que la base de données soit prête (si configurée)
-if [ ! -z "$DATABASE_URL" ]; then
-    echo "⏳ Attente de la base de données..."
-    sleep 10
-fi
+# Exécuter les migrations
+echo "⚙️ Exécution des migrations..."
+php artisan migrate --force
 
-# Exécuter les migrations (si base de données configurée)
-if [ ! -z "$DATABASE_URL" ]; then
-    echo "⚙️ Exécution des migrations..."
-    php artisan migrate --force
-    
-    echo "🌱 Exécution des seeders..."
-    php artisan db:seed --force
-fi
+# Exécuter les seeders
+echo "🌱 Exécution des seeders..."
+php artisan db:seed --force
 
 # Optimiser l'application
 echo "⚡ Optimisation de l'application..."
