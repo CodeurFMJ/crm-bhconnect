@@ -21,5 +21,5 @@ php artisan route:cache
 php artisan view:cache
 
 # Démarrer l'application
-echo "🌐 Démarrage du serveur sur le port $PORT..."
-php artisan serve --host=0.0.0.0 --port=$PORT
+echo "🌐 Démarrage du serveur sur le port 8080..."
+php artisan serve --host=0.0.0.0 --port=8080
