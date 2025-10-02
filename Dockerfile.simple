@@ -27,6 +27,9 @@ COPY . .
 # Installer les dépendances
 RUN composer install --optimize-autoloader --no-dev
 
+# Créer un fichier .env minimal
+RUN echo 'APP_NAME="CRM BhConnect"\nAPP_ENV=production\nAPP_DEBUG=false\nAPP_KEY=base64:nintAOiQ9tDe04cC9p4pQRu+pUE10YjX8RwjUOpH6wQ=\n\nDB_CONNECTION=pgsql\nDB_HOST=localhost\nDB_PORT=5432\nDB_DATABASE=postgres\nDB_USERNAME=postgres\nDB_PASSWORD=password' > .env
+
 # Exposer le port
 EXPOSE 8080
 
