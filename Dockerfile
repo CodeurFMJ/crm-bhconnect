@@ -1,5 +1,5 @@
-# Utiliser l'image PHP officielle
-FROM php:8.1-cli
+# Utiliser l'image PHP officielle avec Apache
+FROM php:8.1-apache
 
 # Installer les dépendances système
 RUN apt-get update && apt-get install -y \
@@ -12,10 +12,8 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     nodejs \
-    npm
-
-# Nettoyer le cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+    npm \
+    && rm -rf /var/lib/apt/lists/*
 
 # Installer les extensions PHP
 RUN docker-php-ext-install pdo pdo_pgsql mbstring exif pcntl bcmath gd
@@ -24,7 +22,7 @@ RUN docker-php-ext-install pdo pdo_pgsql mbstring exif pcntl bcmath gd
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Définir le répertoire de travail
-WORKDIR /app
+WORKDIR /var/www/html
 
 # Copier les fichiers de l'application
 COPY . .
@@ -37,6 +35,10 @@ RUN npm install && npm run build
 
 # Rendre le script de démarrage exécutable
 RUN chmod +x start.sh
+
+# Configurer Apache pour Laravel
+RUN a2enmod rewrite
+RUN echo '<Directory /var/www/html/public>\n    AllowOverride All\n    Require all granted\n</Directory>' > /etc/apache2/sites-available/000-default.conf
 
 # Exposer le port
 EXPOSE 8080
